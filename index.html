@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>عيد ميلاد نسمة ❤️</title>
+<meta name="theme-color" content="#4a1424">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- طبقة المؤثرات (جزيئات + كونفيتي) -->
+<canvas id="fx"></canvas>
+
+<!-- ١) شاشة البداية -->
+<section id="intro" class="scene active">
+  <h1 id="introTitle"></h1>
+  <p id="introSub"></p>
+  <button class="btn" id="openBtn">افتحي مفاجأتك 🎁</button>
+</section>
+
+<!-- ٢) صندوق الهدية -->
+<section id="gift" class="scene">
+  <div class="glow"></div>
+  <div class="box" id="box" role="button" aria-label="افتحي الهدية">
+    <div class="lid"><i class="bow"></i></div>
+    <div class="base"></div>
+    <i class="ribbon"></i>
+  </div>
+  <p class="hint" id="giftHint">اضغطي على الهدية</p>
+  <h2 id="giftMsg" class="giftmsg"></h2>
+  <button class="btn" id="enterBtn" hidden>يلا نكمل ✨</button>
+</section>
+
+<!-- ٣) الموقع الرئيسي -->
+<main id="main" hidden>
+  <header class="hero">
+    <h1 id="heroName"></h1>
+    <div id="countdown" class="countdown"></div>
+  </header>
+
+  <section id="memories" class="sec">
+    <h2 id="memTitle"></h2>
+    <div id="timeline" class="timeline"></div>
+  </section>
+
+  <section id="letter" class="sec dark">
+    <h2 id="letterTitle"></h2>
+    <div id="envelope" class="envelope" role="button" tabindex="0"><span>✉</span><small>اضغطي لفتح الرسالة</small></div>
+    <article id="letterCard" class="card" hidden></article>
+  </section>
+
+  <section class="sec final-sec">
+    <button class="btn" id="finalBtn">لسه فيه حاجة أخيرة مستنياكي...</button>
+  </section>
+</main>
+
+<!-- مشغل الموسيقى -->
+<div id="player" class="player" hidden>
+  <button id="playBtn" aria-label="تشغيل / إيقاف">▶</button>
+  <div class="bars" id="bars"><i></i><i></i><i></i><i></i></div>
+  <input id="vol" type="range" min="0" max="1" step="0.05" value="0.6" aria-label="الصوت">
+</div>
+<audio id="audio" preload="none" loop></audio>
+
+<!-- المفاجأة النهائية -->
+<section id="final" class="final" hidden>
+  <div class="final-in">
+    <h2 id="finalTitle"></h2>
+    <p id="finalText"></p>
+    <button class="btn ghost" id="replayBtn">نعيد التجربة من الأول</button>
+  </div>
+</section>
+
+<!-- عرض الصورة بالحجم الكامل -->
+<div id="lightbox" class="lightbox" hidden><img alt=""><p></p></div>
+
+<script src="script.js"></script>
+</body>
+</html>
